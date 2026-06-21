@@ -12,7 +12,11 @@
     var path = window.location.pathname;
     console.log("path = " + path);
     if (path.startsWith("/@apps/")) {
-        console.log("app = " + path);
+        var end = path.indexOf("/", 6);
+        if (end > 6) {
+            var app = path.substring(6, end);
+            console.log("app = " + app);
+        }
     }
 </script>
 </body>
