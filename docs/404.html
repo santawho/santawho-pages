@@ -9,12 +9,14 @@
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <script>
     console.log("script");
-    var path = window.location.pathname;
+    const path = window.location.pathname;
     console.log("path = " + path);
-    if (path.startsWith("/@apps/")) {
-        var end = path.indexOf("/", 6);
-        if (end > 6) {
-            var app = path.substring(6, end);
+    const prefix = "/@apps/";
+    const len prefLen = prefix.length();
+    if (path.startsWith(prefix)) {
+        const end = path.indexOf("/", prefLen);
+        if (end > prefLen) {
+            const app = path.substring(prefLen, end);
             console.log("app = " + app);
         }
     }
